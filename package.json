@@ -6,6 +6,7 @@
         "name": "Stanislav Kalashnik",
         "email": "darkpark.main@gmail.com"
     },
+    "main": ".eslintrc.js",
     "repository": "cjssdk/eslint-config",
     "keywords": [
         "commonjs",
