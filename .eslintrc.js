@@ -8,7 +8,8 @@
 // public
 module.exports = {
     env: {
-        commonjs: true
+        commonjs: true,
+        node: true
     },
 
     globals: {
