@@ -1,8 +1,9 @@
 General-purpose eslint rules
 ============================
 
-[![NPM version](https://img.shields.io/npm/v/cjs-eslint-config.svg?style=flat-square)](https://www.npmjs.com/package/cjs-eslint-config)
-[![Dependencies Status](https://img.shields.io/david/cjssdk/eslint-config.svg?style=flat-square)](https://david-dm.org/cjssdk/eslint-config)
+[![npm version](https://img.shields.io/npm/v/cjs-eslint-config.svg?style=flat-square)](https://www.npmjs.com/package/cjs-eslint-config)
+[![dependencies status](https://img.shields.io/david/cjssdk/eslint-config.svg?style=flat-square)](https://david-dm.org/cjssdk/eslint-config)
+[![devDependencies status](https://img.shields.io/david/dev/cjssdk/eslint-config.svg?style=flat-square)](https://david-dm.org/cjssdk/eslint-config?type=dev)
 [![Gitter](https://img.shields.io/badge/gitter-join%20chat-blue.svg?style=flat-square)](https://gitter.im/DarkPark/cjssdk)
 
 
