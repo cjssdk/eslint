@@ -122,6 +122,7 @@ module.exports = {
         'no-useless-call': 'error',
         'no-useless-concat': 'warn',
         'no-useless-escape': 'warn',
+        'no-useless-return': 'warn',
         'no-void': 'warn',
         'no-warning-comments': ['warn', {terms: ['todo', 'fixme'], location: 'start'}],
         'no-with': 'error',
