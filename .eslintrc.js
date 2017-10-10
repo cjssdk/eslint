@@ -159,7 +159,7 @@ module.exports = {
         'no-restricted-modules': 'off',
         'no-sync': 'off',
 
-        'array-bracket-newline': ['error', {'multiline': true}],
+        'array-bracket-newline': ['error', {multiline: true}],
         'array-bracket-spacing': ['error', 'never'],
         'block-spacing': ['error', 'always'],
         'brace-style': ['warn', '1tbs', {allowSingleLine: true}],
@@ -248,7 +248,7 @@ module.exports = {
         'space-infix-ops': 'error',
         'space-unary-ops': ['warn', {words: true, nonwords: false}],
         'spaced-comment': 'off',
-        'switch-colon-spacing': ['error', {'after': true, 'before': false}],
+        'switch-colon-spacing': ['error', {after: true, before: false}],
         'unicode-bom': ['error', 'never'],
         'wrap-regex': 'warn'
     }
