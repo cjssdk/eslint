@@ -45,25 +45,28 @@ module.exports = {
         'no-unreachable': 'error',
         'no-unsafe-negation': 'error',
         'use-isnan': 'error',
-        'valid-jsdoc': ['error', {
-            prefer: {
-                returns: 'return'
-            },
-            preferType: {
-                String: 'string',
-                Number: 'number',
-                Boolean: 'boolean',
-                Function: 'function',
-                Undefined: 'undefined',
-                Null: 'null',
-                array: 'Array',
-                object: 'Object'
-            },
-            requireReturn: false,
-            requireParamDescription: true,
-            requireReturnDescription: true,
-            requireReturnType: true
-        }],
+        'valid-jsdoc': [
+            'error',
+            {
+                prefer: {
+                    returns: 'return'
+                },
+                preferType: {
+                    String: 'string',
+                    Number: 'number',
+                    Boolean: 'boolean',
+                    Function: 'function',
+                    Undefined: 'undefined',
+                    Null: 'null',
+                    array: 'Array',
+                    object: 'Object'
+                },
+                requireReturn: false,
+                requireParamDescription: true,
+                requireReturnDescription: true,
+                requireReturnType: true
+            }
+        ],
         'valid-typeof': ['error', {requireStringLiterals: true}],
 
         'accessor-pairs': ['error', {getWithoutSet: false, setWithoutGet: true}],
@@ -177,21 +180,27 @@ module.exports = {
         'id-match': 'off',
         indent: ['error', 4, {SwitchCase: 1, VariableDeclarator: 1}],
         'jsx-quotes': 'off',
-        'key-spacing': ['warn', {
-            singleLine: {
-                beforeColon: false, afterColon: true, mode: 'strict'
-            },
-            multiLine: {
-                beforeColon: false, afterColon: true, mode: 'minimum'
+        'key-spacing': [
+            'warn',
+            {
+                singleLine: {
+                    beforeColon: false, afterColon: true, mode: 'strict'
+                },
+                multiLine: {
+                    beforeColon: false, afterColon: true, mode: 'minimum'
+                }
             }
-        }],
+        ],
         'keyword-spacing': ['error', {before: true, after: true, overrides: {}}],
         'linebreak-style': ['error', 'unix'],
         'lines-around-comment': 'off',
         'max-depth': ['error', 16],
-        'max-len': ['error', {
-            code: 150, tabWidth: 4, ignoreUrls: true
-        }],
+        'max-len': [
+            'error',
+            {
+                code: 150, tabWidth: 4, ignoreUrls: true
+            }
+        ],
         'max-lines': ['error', {max: 1000, skipBlankLines: true, skipComments: true}],
         'max-nested-callbacks': ['error', 5],
         'max-params': ['error', 6],
