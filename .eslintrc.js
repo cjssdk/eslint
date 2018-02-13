@@ -230,7 +230,7 @@ module.exports = {
         'one-var': ['error', 'always'],
         'one-var-declaration-per-line': ['error', 'initializations'],
         'operator-assignment': 'off',
-        'operator-linebreak': ['error', 'after'],
+        'operator-linebreak': 'off',
         'padded-blocks': 'off',
         'padding-line-between-statements': [
             'error',
