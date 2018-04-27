@@ -1,5 +1,5 @@
 {
-    "name": "cjs-eslint-config",
+    "name": "@cjssdk/eslint-config",
     "version": "1.1.2",
     "description": "General-purpose eslint linting rules.",
     "author": {
@@ -10,6 +10,9 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/cjssdk/eslint-config.git"
+    },
+    "publishConfig": {
+        "access": "public"
     },
     "keywords": [
         "commonjs",
