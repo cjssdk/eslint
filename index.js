@@ -17,8 +17,10 @@ module.exports = {
     },
 
     rules: {
+        // Possible Errors
+        // These rules relate to possible syntax or logic errors in JavaScript code
         'for-direction': 'error',
-        'comma-dangle': ['error', 'never'],
+        'getter-return': 'error',
         'no-compare-neg-zero': 'warn',
         'no-cond-assign': 'error',
         'no-console': 'off',
@@ -39,10 +41,12 @@ module.exports = {
         'no-invalid-regexp': 'error',
         'no-irregular-whitespace': 'error',
         'no-obj-calls': 'error',
+        'no-prototype-builtins': 'off',
         'no-regex-spaces': 'error',
         'no-sparse-arrays': 'error',
         'no-unexpected-multiline': 'error',
         'no-unreachable': 'error',
+        'no-unsafe-finally': 'error',
         'no-unsafe-negation': 'error',
         'use-isnan': 'error',
         'valid-jsdoc': [
@@ -69,6 +73,8 @@ module.exports = {
         ],
         'valid-typeof': ['error', {requireStringLiterals: true}],
 
+        // Best Practices
+        // These rules relate to better ways of doing things to help you avoid problems
         'accessor-pairs': ['error', {getWithoutSet: false, setWithoutGet: true}],
         'array-callback-return': 'error',
         'block-scoped-var': 'error',
@@ -80,6 +86,7 @@ module.exports = {
         'dot-notation': 'off',
         eqeqeq: 'error',
         'guard-for-in': 'off',
+        'max-classes-per-file': ['error', 1],
         'no-alert': 'warn',
         'no-caller': 'warn',
         'no-case-declarations': 'error',
@@ -112,9 +119,9 @@ module.exports = {
         'no-octal': 'error',
         'no-octal-escape': 'error',
         'no-param-reassign': 'off',
-        'no-process-env': 'off',
         'no-proto': 'off',
         'no-redeclare': 'error',
+        'no-restricted-properties': 'off',
         'no-return-assign': 'error',
         'no-script-url': 'warn',
         'no-self-assign': ['error', {props: true}],
@@ -131,19 +138,23 @@ module.exports = {
         'no-void': 'warn',
         'no-warning-comments': ['warn', {terms: ['todo', 'fixme'], location: 'start'}],
         'no-with': 'error',
+        'prefer-promise-reject-errors': 'off',
         radix: 'warn',
         'vars-on-top': 'error',
         'wrap-iife': ['error', 'inside'],
         yoda: 'error',
 
+        // Strict Mode
+        // These rules relate to strict mode directives
         strict: ['error', 'global'],
 
+        // Variables
+        // These rules relate to variable declarations
         'init-declarations': 'off',
-        'no-catch-shadow': 'off',
         'no-delete-var': 'error',
         'no-label-var': 'error',
         'no-restricted-globals': 'off',
-        'no-shadow': 'off',
+        'no-shadow': ['error', {builtinGlobals: true, hoist: 'all', allow: ['error']}],
         'no-shadow-restricted-names': 'error',
         'no-undef': 'error',
         'no-undef-init': 'error',
@@ -151,22 +162,30 @@ module.exports = {
         'no-unused-vars': ['error', {vars: 'all', args: 'after-used'}],
         'no-use-before-define': ['error', {functions: true, classes: true}],
 
+        // Node.js and CommonJS
+        // These rules relate to code running in Node.js, or in browsers with CommonJS
         'callback-return': 'off',
         'global-require': 'off',
         'handle-callback-err': ['warn', 'error'],
+        'no-buffer-constructor': 'error',
         'no-mixed-requires': 'off',
         'no-new-require': 'warn',
         'no-path-concat': 'error',
+        'no-process-env': 'off',
         'no-process-exit': 'warn',
-        'no-restricted-imports': 'off',
         'no-restricted-modules': 'off',
         'no-sync': 'off',
 
+        // Stylistic Issues
+        // These rules relate to style guidelines, and are therefore quite subjective
         'array-bracket-newline': ['error', {multiline: true}],
         'array-bracket-spacing': ['error', 'never'],
+        'array-element-newline': ['error', 'consistent'],
         'block-spacing': ['error', 'always'],
         'brace-style': ['warn', '1tbs', {allowSingleLine: true}],
         camelcase: ['error', {properties: 'always'}],
+        'capitalized-comments': 'off',
+        'comma-dangle': ['error', 'never'],
         'comma-spacing': ['error', {before: false, after: true}],
         'comma-style': ['error', 'last'],
         'computed-property-spacing': ['error', 'never'],
@@ -175,6 +194,7 @@ module.exports = {
         'func-call-spacing': ['error', 'never'],
         'func-names': 'off',
         'func-style': 'off',
+        'function-paren-newline': ['error', 'consistent'],
         'id-blacklist': 'off',
         'id-length': ['warn', {min: 2, max: 32, properties: 'never', exceptions: []}],
         'id-match': 'off',
@@ -192,6 +212,7 @@ module.exports = {
             }
         ],
         'keyword-spacing': ['error', {before: true, after: true, overrides: {}}],
+        'line-comment-position': ['error', {position: 'above'}],
         'linebreak-style': ['error', 'unix'],
         'lines-around-comment': 'off',
         'max-depth': ['error', 16],
@@ -202,10 +223,12 @@ module.exports = {
             }
         ],
         'max-lines': ['error', {max: 1000, skipBlankLines: true, skipComments: true}],
+        'max-lines-per-function': ['error', {max: 128, skipBlankLines: true, skipComments: true}],
         'max-nested-callbacks': ['error', 5],
         'max-params': ['error', 6],
         'max-statements': ['warn', 64, {ignoreTopLevelFunctions: false}],
         'max-statements-per-line': ['warn', {max: 5}],
+        'multiline-ternary': 'off',
         'new-cap': 'error',
         'new-parens': 'error',
         'newline-per-chained-call': ['error', {ignoreChainWithDepth: 8}],
@@ -214,19 +237,25 @@ module.exports = {
         'no-continue': 'warn',
         'no-inline-comments': 'off',
         'no-lonely-if': 'warn',
+        'no-mixed-operators': 'warn',
         'no-mixed-spaces-and-tabs': 'error',
+        'no-multi-assign': 'off',
         'no-multiple-empty-lines': ['error', {max: 2, maxEOF: 0, maxBOF: 0}],
         'no-negated-condition': 'warn',
         'no-nested-ternary': 'warn',
         'no-new-object': 'error',
         'no-plusplus': 'off',
         'no-restricted-syntax': 'off',
+        'no-tabs': 'error',
         'no-ternary': 'off',
         'no-trailing-spaces': ['error', {skipBlankLines: true}],
         'no-underscore-dangle': ['error', {allowAfterThis: false, allow: []}],
         'no-unneeded-ternary': 'error',
         'no-whitespace-before-property': 'error',
+        'nonblock-statement-body-position': 'off',
+        'object-curly-newline': ['error', {consistent: true}],
         'object-curly-spacing': ['error', 'never'],
+        'object-property-newline': 'off',
         'one-var': ['error', 'always'],
         'one-var-declaration-per-line': ['error', 'initializations'],
         'operator-assignment': 'off',
@@ -234,14 +263,10 @@ module.exports = {
         'padded-blocks': 'off',
         'padding-line-between-statements': [
             'error',
-            {blankLine: 'always', prev: '*', next: 'return'},
+            {blankLine: 'always', prev: '*', next: ['directive', 'return', 'export', 'cjs-export', 'try', 'function']},
+            {blankLine: 'always', prev: ['directive', 'export', 'cjs-export', 'try', 'function'], next: '*'},
             {blankLine: 'always', prev: ['const', 'let', 'var'], next: '*'},
-            {blankLine: 'always', prev: 'directive', next: '*'},
-            {blankLine: 'any',    prev: 'directive', next: 'directive'},
-            {blankLine: 'always', prev: '*', next: 'export'},
-            {blankLine: 'always', prev: 'export', next: '*'},
-            {blankLine: 'always', prev: '*', next: 'try'},
-            {blankLine: 'always', prev: 'try', next: '*'}
+            {blankLine: 'any',    prev: 'directive', next: 'directive'}
         ],
         'quote-props': ['error', 'as-needed'],
         quotes: ['error', 'single', 'avoid-escape'],
@@ -249,7 +274,6 @@ module.exports = {
         semi: ['error', 'always'],
         'semi-spacing': ['error', {before: false, after: true}],
         'semi-style': ['error', 'last'],
-        'sort-imports': 'off',
         'sort-vars': 'off',
         'space-before-blocks': ['error', 'always'],
         'space-before-function-paren': ['error', {anonymous: 'always', named: 'always'}],
