@@ -1,26 +1,28 @@
 {
-    "name": "@cjssdk/eslint-config",
-    "version": "1.1.2",
-    "description": "General-purpose eslint linting rules.",
+    "name": "@cjssdk/eslint",
+    "version": "1.0.0",
+    "description": "General-purpose eslint linting.",
     "author": {
         "name": "Stanislav Kalashnik",
         "email": "darkpark.main@gmail.com"
     },
-    "main": ".eslintrc.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/cjssdk/eslint-config.git"
+        "url": "https://github.com/cjssdk/eslint.git"
     },
     "publishConfig": {
         "access": "public"
     },
+    "dependencies": {
+        "eslint": "^5.2.0"
+    },
     "keywords": [
         "commonjs",
+        "cjs",
         "sdk",
         "cjssdk",
         "framework",
-        "eslint",
-        "config"
+        "eslint"
     ],
     "license": "GPL-3.0"
 }
