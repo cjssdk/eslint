@@ -10,6 +10,9 @@
         "type": "git",
         "url": "https://github.com/cjssdk/eslint.git"
     },
+    "bin": {
+        "eslint": "./node_modules/.bin/eslint"
+    },
     "publishConfig": {
         "access": "public"
     },
