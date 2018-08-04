@@ -1,7 +1,7 @@
 General-purpose eslint linting
 ==============================
 
-[![npm version](https://img.shields.io/npm/v/@cjssdk/eslint.svg?style=flat-square)](https://www.npmjs.com/package/@cjssdk/eslint)
+[![npm version](https://img.shields.io/npm/v/cjs-eslint.svg?style=flat-square)](https://www.npmjs.com/package/cjs-eslint)
 [![dependencies status](https://img.shields.io/david/cjssdk/eslint.svg?style=flat-square)](https://david-dm.org/cjssdk/eslint)
 [![devDependencies status](https://img.shields.io/david/dev/cjssdk/eslint.svg?style=flat-square)](https://david-dm.org/cjssdk/eslint?type=dev)
 [![Gitter](https://img.shields.io/badge/gitter-join%20chat-blue.svg?style=flat-square)](https://gitter.im/DarkPark/cjssdk)
@@ -10,7 +10,7 @@ General-purpose eslint linting
 ## Installation ##
 
 ```bash
-npm install @cjssdk/eslint
+npm install cjs-eslint
 ```
 
 
@@ -20,7 +20,7 @@ Add file `.eslintrc.js` to your project with the following content:
 
 ```js
 module.exports = {
-    extends: require.resolve('@cjssdk/eslint')
+    extends: require.resolve('cjs-eslint')
 };
 ```
 
@@ -39,4 +39,4 @@ according to the contribution [rules](.github/contributing.md).
 
 ## License ##
 
-`@cjssdk/eslint` is released under the [GPL-3.0 License](http://opensource.org/licenses/GPL-3.0).
+`cjs-eslint` is released under the [GPL-3.0 License](http://opensource.org/licenses/GPL-3.0).
