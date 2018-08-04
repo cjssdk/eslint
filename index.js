@@ -141,7 +141,7 @@ module.exports = {
         'no-with': 'error',
         'prefer-promise-reject-errors': 'off',
         radix: 'warn',
-        'require-unicode-regexp': 'warn',
+        'require-unicode-regexp': 'off',
         'vars-on-top': 'error',
         'wrap-iife': ['error', 'inside'],
         yoda: 'error',
