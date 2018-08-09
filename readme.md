@@ -16,7 +16,7 @@ npm install cjs-eslint --save-dev
 
 ## Usage ##
 
-Add file `.eslintrc.js` to your project with the following content:
+Add file `.eslintrc.js` to your project root with the following content:
 
 ```js
 module.exports = {
