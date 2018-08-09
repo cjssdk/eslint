@@ -10,7 +10,7 @@ General-purpose eslint linting
 ## Installation ##
 
 ```bash
-npm install cjs-eslint
+npm install cjs-eslint --save-dev
 ```
 
 
