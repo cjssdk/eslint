@@ -16,6 +16,8 @@ module.exports = {
         DEVELOP: false
     },
 
+    plugins: ['jsdoc'],
+
     rules: {
         // Possible Errors
         // These rules relate to possible syntax or logic errors in JavaScript code
@@ -50,7 +52,7 @@ module.exports = {
         'no-unsafe-finally': 'error',
         'no-unsafe-negation': 'error',
         'use-isnan': 'error',
-        'valid-jsdoc': [
+        /*'valid-jsdoc': [
             'error',
             {
                 prefer: {
@@ -71,7 +73,7 @@ module.exports = {
                 requireReturnDescription: true,
                 requireReturnType: true
             }
-        ],
+        ],*/
         'valid-typeof': ['error', {requireStringLiterals: true}],
 
         // Best Practices
@@ -272,7 +274,7 @@ module.exports = {
         ],
         'quote-props': ['error', 'as-needed'],
         quotes: ['error', 'single', 'avoid-escape'],
-        'require-jsdoc': 'off',
+        //'require-jsdoc': 'off',
         semi: ['error', 'always'],
         'semi-spacing': ['error', {before: false, after: true}],
         'semi-style': ['error', 'last'],
@@ -285,6 +287,32 @@ module.exports = {
         'spaced-comment': 'off',
         'switch-colon-spacing': ['error', {after: true, before: false}],
         'unicode-bom': ['error', 'never'],
-        'wrap-regex': 'warn'
+        'wrap-regex': 'warn',
+
+        // plugin jsdoc
+        'jsdoc/check-param-names': 1,
+        'jsdoc/check-tag-names': 1,
+        'jsdoc/check-types': 1,
+        'jsdoc/newline-after-description': 1,
+        'jsdoc/no-undefined-types': 1,
+        'jsdoc/require-description': 0,
+        'jsdoc/require-description-complete-sentence': 0,
+        'jsdoc/require-example': 0,
+        'jsdoc/require-hyphen-before-param-description': 1,
+        'jsdoc/require-param': 1,
+        'jsdoc/require-param-description': 1,
+        'jsdoc/require-param-name': 1,
+        'jsdoc/require-param-type': 1,
+        'jsdoc/require-returns-description': 1,
+        'jsdoc/require-returns-type': 1,
+        'jsdoc/valid-types': 1
+    },
+
+    settings: {
+        jsdoc: {
+            tagNamePreference: {
+                returns: 'return'
+            }
+        }
     }
 };

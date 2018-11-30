@@ -11,7 +11,8 @@
         "url": "https://github.com/cjssdk/eslint.git"
     },
     "dependencies": {
-        "eslint": "^5.6.0"
+        "eslint": "^5.9.0",
+        "eslint-plugin-jsdoc": "^3.9.1"
     },
     "keywords": [
         "commonjs",
