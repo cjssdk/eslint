@@ -311,7 +311,9 @@ module.exports = {
     settings: {
         jsdoc: {
             tagNamePreference: {
-                returns: 'return'
+                returns: 'return',
+                augments: 'extends',
+                class: 'constructor'
             }
         }
     }
