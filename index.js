@@ -9,6 +9,7 @@
 module.exports = {
     env: {
         commonjs: true,
+        es6: true,
         node: true
     },
 
@@ -200,7 +201,7 @@ module.exports = {
         'func-style': 'off',
         'function-paren-newline': ['error', 'consistent'],
         'id-blacklist': 'off',
-        'id-length': ['warn', {min: 2, max: 32, properties: 'never', exceptions: []}],
+        'id-length': ['warn', {min: 2, max: 64, properties: 'never', exceptions: []}],
         'id-match': 'off',
         indent: ['error', 4, {SwitchCase: 1, VariableDeclarator: 1}],
         'jsx-quotes': 'off',
