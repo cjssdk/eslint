@@ -1,6 +1,6 @@
 {
     "name": "cjs-eslint",
-    "version": "1.2.3",
+    "version": "1.2.4",
     "description": "General-purpose eslint linting.",
     "author": {
         "name": "Stanislav Kalashnik",
