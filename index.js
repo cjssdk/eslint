@@ -7,6 +7,13 @@
 
 // public
 module.exports = {
+    parserOptions: {
+        ecmaVersion: 2019,
+        ecmaFeatures: {
+            jsx: true
+        }
+    },
+
     env: {
         commonjs: true,
         es6: true,
@@ -14,16 +21,18 @@ module.exports = {
     },
 
     globals: {
-        DEVELOP: false
+        DEVELOP: 'readonly'
     },
 
     plugins: ['jsdoc'],
 
     rules: {
         // Possible Errors
-        // These rules relate to possible syntax or logic errors in JavaScript code
+        // These rules relate to possible syntax or logic errors in JavaScript code:
         'for-direction': 'error',
         'getter-return': 'error',
+        'no-async-promise-executor': 'warn',
+        'no-await-in-loop': 'warn',
         'no-compare-neg-zero': 'warn',
         'no-cond-assign': 'error',
         'no-console': 'off',
@@ -31,6 +40,7 @@ module.exports = {
         'no-control-regex': 'off',
         'no-debugger': 'off',
         'no-dupe-args': 'error',
+        'no-dupe-else-if': 'error',
         'no-dupe-keys': 'error',
         'no-duplicate-case': 'error',
         'no-empty': 'error',
@@ -40,60 +50,49 @@ module.exports = {
         'no-extra-parens': 'off',
         'no-extra-semi': 'error',
         'no-func-assign': 'error',
+        'no-import-assign': 'error',
         'no-inner-declarations': ['error', 'both'],
         'no-invalid-regexp': 'error',
         'no-irregular-whitespace': 'error',
+        'no-loss-of-precision': 'error',
         'no-misleading-character-class': 'error',
         'no-obj-calls': 'error',
         'no-prototype-builtins': 'off',
         'no-regex-spaces': 'error',
+        'no-setter-return': 'error',
         'no-sparse-arrays': 'error',
+        'no-template-curly-in-string': 'warn',
         'no-unexpected-multiline': 'error',
         'no-unreachable': 'error',
         'no-unsafe-finally': 'error',
         'no-unsafe-negation': 'error',
+        'no-useless-backreference': 'error',
+        'require-atomic-updates': 'error',
         'use-isnan': 'error',
-        /*'valid-jsdoc': [
-            'error',
-            {
-                prefer: {
-                    returns: 'return'
-                },
-                preferType: {
-                    String: 'string',
-                    Number: 'number',
-                    Boolean: 'boolean',
-                    Function: 'function',
-                    Undefined: 'undefined',
-                    Null: 'null',
-                    array: 'Array',
-                    object: 'Object'
-                },
-                requireReturn: false,
-                requireParamDescription: true,
-                requireReturnDescription: true,
-                requireReturnType: true
-            }
-        ],*/
         'valid-typeof': ['error', {requireStringLiterals: true}],
 
         // Best Practices
-        // These rules relate to better ways of doing things to help you avoid problems
+        // These rules relate to better ways of doing things to help you avoid problems:
         'accessor-pairs': ['error', {getWithoutSet: false, setWithoutGet: true}],
         'array-callback-return': 'error',
         'block-scoped-var': 'error',
+        'class-methods-use-this': 'warn',
         complexity: ['error', 32],
         'consistent-return': 'error',
         curly: ['error', 'all'],
         'default-case': 'off',
+        'default-case-last': 'error',
+        'default-param-last': 'warn',
         'dot-location': ['error', 'property'],
-        'dot-notation': 'off',
+        'dot-notation': 'warn',
         eqeqeq: 'error',
+        'grouped-accessor-pairs': 'warn',
         'guard-for-in': 'off',
         'max-classes-per-file': ['error', 1],
         'no-alert': 'warn',
         'no-caller': 'warn',
         'no-case-declarations': 'error',
+        'no-constructor-return': 'error',
         'no-div-regex': 'error',
         'no-else-return': 'warn',
         'no-empty-function': ['error', {allow: []}],
@@ -122,11 +121,12 @@ module.exports = {
         'no-new-wrappers': 'error',
         'no-octal': 'error',
         'no-octal-escape': 'error',
-        'no-param-reassign': 'off',
+        'no-param-reassign': 'warn',
         'no-proto': 'off',
         'no-redeclare': 'error',
         'no-restricted-properties': 'off',
         'no-return-assign': 'error',
+        'no-return-await': 'warn',
         'no-script-url': 'warn',
         'no-self-assign': ['error', {props: true}],
         'no-self-compare': 'error',
@@ -143,19 +143,22 @@ module.exports = {
         'no-void': 'warn',
         'no-warning-comments': ['warn', {terms: ['todo', 'fixme'], location: 'start'}],
         'no-with': 'error',
+        'prefer-named-capture-group': 'warn',
         'prefer-promise-reject-errors': 'off',
+        'prefer-regex-literals': 'warn',
         radix: 'warn',
+        'require-await': 'warn',
         'require-unicode-regexp': 'off',
         'vars-on-top': 'error',
         'wrap-iife': ['error', 'inside'],
         yoda: 'error',
 
         // Strict Mode
-        // These rules relate to strict mode directives
+        // These rules relate to strict mode directives:
         strict: ['error', 'global'],
 
         // Variables
-        // These rules relate to variable declarations
+        // These rules relate to variable declarations:
         'init-declarations': 'off',
         'no-delete-var': 'error',
         'no-label-var': 'error',
@@ -168,27 +171,13 @@ module.exports = {
         'no-unused-vars': ['error', {vars: 'all', args: 'after-used'}],
         'no-use-before-define': ['error', {functions: true, classes: true}],
 
-        // Node.js and CommonJS
-        // These rules relate to code running in Node.js, or in browsers with CommonJS
-        'callback-return': 'off',
-        'global-require': 'off',
-        'handle-callback-err': ['warn', 'error'],
-        'no-buffer-constructor': 'error',
-        'no-mixed-requires': 'off',
-        'no-new-require': 'warn',
-        'no-path-concat': 'error',
-        'no-process-env': 'off',
-        'no-process-exit': 'warn',
-        'no-restricted-modules': 'off',
-        'no-sync': 'off',
-
         // Stylistic Issues
-        // These rules relate to style guidelines, and are therefore quite subjective
+        // These rules relate to style guidelines, and are therefore quite subjective:
         'array-bracket-newline': ['error', {multiline: true}],
         'array-bracket-spacing': ['error', 'never'],
         'array-element-newline': ['error', 'consistent'],
         'block-spacing': ['error', 'always'],
-        'brace-style': ['warn', '1tbs', {allowSingleLine: true}],
+        'brace-style': ['warn', '1tbs', {allowSingleLine: false}],
         camelcase: ['error', {properties: 'always'}],
         'capitalized-comments': 'off',
         'comma-dangle': ['error', 'never'],
@@ -198,14 +187,17 @@ module.exports = {
         'consistent-this': ['error', 'self'],
         'eol-last': 'warn',
         'func-call-spacing': ['error', 'never'],
+        'func-name-matching': 'off',
         'func-names': 'off',
-        'func-style': 'off',
-        'function-paren-newline': ['error', 'consistent'],
+        'func-style': ['warn', 'expression', {allowArrowFunctions: true}],
+        'function-call-argument-newline': ['warn', 'consistent'],
+        'function-paren-newline': ['warn', 'consistent'],
         'id-blacklist': 'off',
         'id-length': ['warn', {min: 2, max: 64, properties: 'never', exceptions: []}],
         'id-match': 'off',
-        indent: ['error', 4, {SwitchCase: 1, VariableDeclarator: 1}],
-        'jsx-quotes': 'off',
+        'implicit-arrow-linebreak': ['warn', 'beside'],
+        indent: ['error', 4, {SwitchCase: 1}],
+        'jsx-quotes': ['error', 'prefer-single'],
         'key-spacing': [
             'warn',
             {
@@ -221,6 +213,7 @@ module.exports = {
         'line-comment-position': ['error', {position: 'above'}],
         'linebreak-style': ['error', 'unix'],
         'lines-around-comment': 'off',
+        'lines-between-class-members': 'error',
         'max-depth': ['error', 16],
         'max-len': [
             'error',
@@ -234,10 +227,11 @@ module.exports = {
         'max-params': ['error', 6],
         'max-statements': ['warn', 64, {ignoreTopLevelFunctions: false}],
         'max-statements-per-line': ['warn', {max: 5}],
+        'multiline-comment-style': 'off',
         'multiline-ternary': 'off',
         'new-cap': 'error',
         'new-parens': 'error',
-        'newline-per-chained-call': ['error', {ignoreChainWithDepth: 8}],
+        'newline-per-chained-call': ['warn', {ignoreChainWithDepth: 8}],
         'no-array-constructor': 'error',
         'no-bitwise': 'warn',
         'no-continue': 'warn',
@@ -245,7 +239,7 @@ module.exports = {
         'no-lonely-if': 'warn',
         'no-mixed-operators': 'warn',
         'no-mixed-spaces-and-tabs': 'error',
-        'no-multi-assign': 'off',
+        'no-multi-assign': 'warn',
         'no-multiple-empty-lines': ['error', {max: 2, maxEOF: 0, maxBOF: 0}],
         'no-negated-condition': 'warn',
         'no-nested-ternary': 'warn',
@@ -256,17 +250,18 @@ module.exports = {
         'no-ternary': 'off',
         'no-trailing-spaces': ['error', {skipBlankLines: true}],
         'no-underscore-dangle': ['error', {allowAfterThis: false, allow: []}],
-        'no-unneeded-ternary': 'error',
+        'no-unneeded-ternary': 'warn',
         'no-whitespace-before-property': 'error',
+        // disabled because of curly rule is set to 'all'
         'nonblock-statement-body-position': 'off',
         'object-curly-newline': ['error', {consistent: true}],
         'object-curly-spacing': ['error', 'never'],
         'object-property-newline': 'off',
-        'one-var': ['error', 'always'],
-        'one-var-declaration-per-line': ['error', 'initializations'],
+        'one-var': ['error', 'never'],
+        'one-var-declaration-per-line': 'off',
         'operator-assignment': 'off',
-        'operator-linebreak': 'off',
-        'padded-blocks': 'off',
+        'operator-linebreak': ['warn', 'none', {overrides: {'?': 'before', ':': 'before', '+': 'before'}}],
+        'padded-blocks': ['warn', 'never'],
         'padding-line-between-statements': [
             'error',
             {blankLine: 'always', prev: '*', next: ['directive', 'return', 'export', 'cjs-export', 'try', 'function']},
@@ -274,12 +269,14 @@ module.exports = {
             {blankLine: 'always', prev: ['const', 'let', 'var'], next: '*'},
             {blankLine: 'any',    prev: 'directive', next: 'directive'}
         ],
+        'prefer-exponentiation-operator': 'warn',
+        'prefer-object-spread': 'warn',
         'quote-props': ['error', 'as-needed'],
         quotes: ['error', 'single', 'avoid-escape'],
-        //'require-jsdoc': 'off',
         semi: ['error', 'always'],
         'semi-spacing': ['error', {before: false, after: true}],
         'semi-style': ['error', 'last'],
+        'sort-keys': 'off',
         'sort-vars': 'off',
         'space-before-blocks': ['error', 'always'],
         'space-before-function-paren': ['error', {anonymous: 'always', named: 'always'}],
@@ -288,25 +285,80 @@ module.exports = {
         'space-unary-ops': ['warn', {words: true, nonwords: false}],
         'spaced-comment': 'off',
         'switch-colon-spacing': ['error', {after: true, before: false}],
+        'template-tag-spacing': ['warn', 'always'],
         'unicode-bom': ['error', 'never'],
         'wrap-regex': 'warn',
 
+        // ECMAScript 6
+        // These rules relate to ES6, also known as ES2015:
+        'arrow-body-style': ['warn', 'as-needed'],
+        'arrow-parens': ['warn', 'as-needed'],
+        'arrow-spacing': ['error', {before: true, after: true}],
+        'constructor-super': 'error',
+        'generator-star-spacing': ['warn', {before: true, after: true}],
+        'no-class-assign': 'error',
+        'no-confusing-arrow': 'warn',
+        'no-const-assign': 'error',
+        'no-dupe-class-members': 'error',
+        'no-duplicate-imports': 'warn',
+        'no-new-symbol': 'error',
+        'no-restricted-exports': 'off',
+        'no-restricted-imports': 'off',
+        'no-this-before-super': 'error',
+        'no-useless-computed-key': ['error', {enforceForClassMembers: true}],
+        'no-useless-constructor': 'error',
+        'no-useless-rename': 'warn',
+        'no-var': 'warn',
+        'object-shorthand': ['warn', 'consistent-as-needed'],
+        'prefer-arrow-callback': 'warn',
+        'prefer-const': 'warn',
+        'prefer-destructuring': 'warn',
+        'prefer-numeric-literals': 'warn',
+        'prefer-rest-params': 'warn',
+        'prefer-spread': 'warn',
+        'prefer-template': 'off',
+        'require-yield': 'error',
+        'rest-spread-spacing': ['error', 'never'],
+        'sort-imports': 'off',
+        'symbol-description': 'warn',
+        'template-curly-spacing': 'warn',
+        'yield-star-spacing': 'off',
+
         // plugin jsdoc
+        'jsdoc/check-access': 0,
+        'jsdoc/check-alignment': 1,
+        'jsdoc/check-examples': 1,
+        'jsdoc/check-indentation': 1,
         'jsdoc/check-param-names': 1,
+        'jsdoc/check-property-names': 1,
+        'jsdoc/check-syntax': 0,
         'jsdoc/check-tag-names': 1,
         'jsdoc/check-types': 1,
+        'jsdoc/check-values': 0,
+        'jsdoc/empty-tags': 1,
+        'jsdoc/implements-on-classes': 1,
+        'jsdoc/match-description': 0,
         'jsdoc/newline-after-description': 1,
+        'jsdoc/no-types': 0,
         'jsdoc/no-undefined-types': 1,
-        'jsdoc/require-description': 0,
         'jsdoc/require-description-complete-sentence': 0,
+        'jsdoc/require-description': 1,
         'jsdoc/require-example': 0,
+        'jsdoc/require-file-overview': 0,
         'jsdoc/require-hyphen-before-param-description': 1,
+        'jsdoc/require-jsdoc': 0,
         'jsdoc/require-param': 1,
         'jsdoc/require-param-description': 1,
         'jsdoc/require-param-name': 1,
         'jsdoc/require-param-type': 1,
+        'jsdoc/require-property': 1,
+        'jsdoc/require-property-description': 1,
+        'jsdoc/require-property-name': 1,
+        'jsdoc/require-property-type': 1,
+        'jsdoc/require-returns-check': 1,
         'jsdoc/require-returns-description': 1,
         'jsdoc/require-returns-type': 1,
+        'jsdoc/require-returns': 1,
         'jsdoc/valid-types': 1
     },
 
