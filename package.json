@@ -1,6 +1,6 @@
 {
     "name": "cjs-eslint",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "description": "General-purpose eslint linting.",
     "author": {
         "name": "Stanislav Kalashnik",
@@ -11,7 +11,7 @@
         "url": "https://github.com/cjssdk/eslint.git"
     },
     "dependencies": {
-        "eslint": "^7.1.0",
+        "eslint": "^7.4.0",
         "eslint-plugin-jsdoc": "^25.4.3"
     },
     "keywords": [
