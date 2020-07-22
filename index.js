@@ -194,7 +194,7 @@ module.exports = {
         'func-style': ['warn', 'expression', {allowArrowFunctions: true}],
         'function-call-argument-newline': ['warn', 'consistent'],
         'function-paren-newline': ['warn', 'consistent'],
-        'id-blacklist': 'off',
+        'id-denylist': 'off',
         'id-length': ['warn', {min: 2, max: 64, properties: 'never', exceptions: []}],
         'id-match': 'off',
         'implicit-arrow-linebreak': ['warn', 'beside'],
