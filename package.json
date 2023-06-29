@@ -12,7 +12,7 @@
     },
     "dependencies": {
         "eslint": "^7.5.0",
-        "eslint-plugin-jsdoc": "^25.4.3"
+        "eslint-plugin-jsdoc": "^46.4.2"
     },
     "keywords": [
         "commonjs",
